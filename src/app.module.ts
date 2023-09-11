@@ -1,14 +1,14 @@
-import { Module } from '@nestjs/common';
-import { GraphQLModule } from '@nestjs/graphql';
-import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
-import { builder } from './libs/builder';
-import { ConfigModule } from '@nestjs/config';
-import { prisma } from './libs/context';
-import * as jsonwebtoken from 'jsonwebtoken';
 import { ApolloServerPluginLandingPageLocalDefault } from '@apollo/server/plugin/landingPage/default';
-import './libs/resolvers';
-import { IncomingMessage, ServerResponse } from 'http';
+import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
+import { Module } from '@nestjs/common';
+import { ConfigModule } from '@nestjs/config';
+import { GraphQLModule } from '@nestjs/graphql';
 import { parse } from 'cookie';
+import * as jsonwebtoken from 'jsonwebtoken';
+import { builder } from './libs/builder';
+import { prisma } from './libs/context';
+import './libs/resolvers';
+import type { IncomingMessage, ServerResponse } from 'http';
 
 const schema = builder.toSchema();
 

@@ -9,7 +9,6 @@
     "target": "es2017",
     "sourceMap": true,
     "outDir": "./dist",
-    "baseUrl": "./",
     "incremental": true,
     "skipLibCheck": true,
     "noImplicitAny": false,
@@ -18,5 +17,5 @@
     "strict": true
   },
   "include": ["src"],
-  "exclude": ["seed", "test", "node_modules"]
+  "exclude": ["seeds", "node_modules", ".eslintrc.js"]
 }

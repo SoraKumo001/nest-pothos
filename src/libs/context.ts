@@ -1,5 +1,5 @@
-import { PrismaClient } from '@prisma/client';
 import { IncomingMessage, ServerResponse } from 'http';
+import { PrismaClient } from '@prisma/client';
 
 declare let global: { prisma?: PrismaClient };
 
