@@ -16,5 +16,7 @@
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false,
     "strict": true
-  }
+  },
+  "include": ["src"],
+  "exclude": ["seed", "test", "node_modules"]
 }

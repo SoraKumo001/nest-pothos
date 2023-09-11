@@ -1,10 +1,13 @@
 import { PrismaClient } from '@prisma/client';
+import { IncomingMessage, ServerResponse } from 'http';
 
 declare let global: { prisma?: PrismaClient };
 
 export type Context = {
   prisma: PrismaClient;
-  user?: { name: string; id: string };
+  user?: { name: string; id: string; roles: string[] };
+  req: IncomingMessage;
+  res: ServerResponse;
 };
 
 global.prisma?.$disconnect();
