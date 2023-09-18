@@ -11,7 +11,7 @@ datasource db {
 }
 
 /// @pothos-generator operation {include:["createOne","updateOne","findMany"]}
-/// @pothos-generator option {include:["mutation"],option:{authScopes:{ADMIN:true}}}
+/// @pothos-generator executable {include:["mutation"],authority:["USER"]}
 /// @pothos-generator input-field {include:["create"],fields:{include:["email","name"]}}
 /// @pothos-generator input-field {include:["update"],fields:{include:["name"]}}
 model User {
@@ -26,7 +26,6 @@ model User {
   updatedAt DateTime @updatedAt
 }
 
-/// @pothos-generator operation {exclude:["deleteMany"]}
 /// @pothos-generator executable {include:["mutation"],authority:["USER"]}
 /// @pothos-generator input-field {fields:{exclude:["id","createdAt","updatedAt","author"]}}
 /// @pothos-generator input-data {data:{authorId:"%%USER%%"}}
@@ -49,6 +48,7 @@ model Post {
 }
 
 /// @pothos-generator order {orderBy:{name:"asc"}}
+/// @pothos-generator executable {include:["mutation"],authority:["USER"]}
 /// @pothos-generator input-field {fields:{exclude:["id","createdAt","updatedAt","posts"]}}
 model Category {
   id        String   @id @default(uuid())

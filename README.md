@@ -17,6 +17,14 @@ yarn seed
 yarn start:dev
 ```
 
+# test signIn
+
+```
+mutation signIn {
+  signIn(email: "example@example.com")
+}
+```
+
 ## Overview
 
 Automatic generation of GraphQL schema from prisma schema.
